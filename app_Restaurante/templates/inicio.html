@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inicio | Restaurante{% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <h1 class="fw-bold">Bienvenido al Sistema del Restaurante</h1>
+  <p class="lead">Gestión de platillos y clientes</p>
+</div>
+
+<!-- Tarjetas -->
+<div class="row mt-5 text-center">
+  <div class="col-md-6 mb-3">
+    <div class="card shadow-sm border-0 h-100">
+      <div class="card-body">
+        <h4>🍲 Platillos registrados</h4>
+        <p class="display-5 fw-bold text-success">{{ total_platillos }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <div class="card shadow-sm border-0 h-100">
+      <div class="card-body">
+        <h4>👤 Clientes registrados</h4>
+        <p class="display-5 fw-bold text-primary">{{ total_clientes }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Listado de platillos -->
+<div class="mt-5">
+  <h3 class="text-success">🍴 Lista de Platillos</h3>
+  {% if platillos %}
+    <ul class="list-group mt-3">
+      {% for p in platillos %}
+        <li class="list-group-item">{{ p.nombre }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted mt-3">Aún no hay platillos registrados.</p>
+  {% endif %}
+</div>
+
+<!-- Listado de clientes -->
+<div class="mt-5">
+  <h3 class="text-primary">🧍 Lista de Clientes</h3>
+  {% if clientes %}
+    <ul class="list-group mt-3">
+      {% for c in clientes %}
+        <li class="list-group-item">{{ c.nombre }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted mt-3">Aún no hay clientes registrados.</p>
+  {% endif %}
+</div>
+
+<!-- Imagen debajo de las tarjetas -->
+<div class="text-center mt-5">
+  <img 
+    src="https://i2.wp.com/foodandpleasure.com/wp-content/uploads/2020/01/helena-restaurante-juarez-4.jpg?fit=2800%2C1869&ssl=1" 
+    alt="Restaurante" 
+    class="img-fluid rounded shadow-lg" 
+    style="max-height: 400px; object-fit: cover;">
+</div>
+{% endblock %}
+

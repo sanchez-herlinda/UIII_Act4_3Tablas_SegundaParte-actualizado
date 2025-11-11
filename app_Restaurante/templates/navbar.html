@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+      <i class="bi bi-shop" style="font-size:1.4rem; margin-right:8px;"></i>
+      <strong>Restaurante</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Platillos</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'agregar_platillo' %}">Agregar platillo</a></li>
+            <li><a class="dropdown-item" href="{% url 'ver_platillos' %}">Ver platillos</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Clientes</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'agregar_cliente' %}">Agregar cliente</a></li>
+            <li><a class="dropdown-item" href="{% url 'ver_clientes' %}">Ver clientes</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pedidos</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Agregar pedido</a></li>
+            <li><a class="dropdown-item" href="#">Ver pedido</a></li>
+            <li><a class="dropdown-item" href="#">Actualizar pediod</a></li>
+            <li><a class="dropdown-item" href="#">Borrar pedido</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
